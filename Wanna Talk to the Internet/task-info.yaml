@@ -1,0 +1,21 @@
+type: edu
+custom_name: Wanna Talk to the Internet?
+files:
+  - name: test/__init__.py
+    visible: false
+    learner_created: false
+  - name: test/tests.py
+    visible: false
+    learner_created: false
+  - name: scraper.py
+    visible: true
+    learner_created: false
+  - name: tests.py
+    visible: false
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/11755#comment
+status: Solved
+feedback:
+  message: Congratulations!
+  time: "Tue, 23 Jul 2024 22:34:11 UTC"
+record: 1
