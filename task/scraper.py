@@ -1,20 +1,14 @@
 import requests
 from bs4 import BeautifulSoup
+from http import HTTPStatus
 
 url = input('Input the URL:')
 r = requests.get(url)
 
-if r.status_code == 200 and url.startswith('https://www.nature.com/articles/'):
+if r.status_code == HTTPStatus.OK:
 
-    soup = BeautifulSoup(r.content, 'html.parser')
-    title = soup.title.string
-    description = soup.find('meta', {'name' : 'description'})['content']
-
-    article_info = {
-        "title": title,
-        "description": description
-    }
-
-    print(article_info)
+    with open('source.html', 'wb') as file:
+        file.write(bytes(r.content))
+        print("Content saved.")
 else:
-    print('Invalid page!')
+    print('The URL returned ', r.status_code)
